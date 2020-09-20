@@ -9,6 +9,7 @@
 #import "ContactsTableViewController.h"
 #import "Contact.h"
 #import "ContactCellTableViewCell.h"
+#import "ContactDetailsTableViewController.h"
 
 @interface ContactsTableViewController ()
 
@@ -45,6 +46,8 @@
     [[self contactsArray] addObject:contact3];
     [[self contactsArray] addObject:contact4];
     [[self contactsArray] addObject:contact5];
+    
+//    _selectedContact = [[Contact alloc] init];
 }
 
 #pragma mark - Table view data source
@@ -69,11 +72,10 @@
             cell = [[ContactCellTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         }
         Contact* selectedContact = [[self contactsArray] objectAtIndex:indexPath.row];
+    
         [[cell nameLabel] setText:[selectedContact name]];
         [[cell photoImageView] setImage:[selectedContact photo]];
         [[cell positionLabel] setText:[selectedContact position]];
-        
-    //    cell.textLabel.text = [self contactsArray]
         
         return cell;
 }
@@ -113,14 +115,29 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    
+//    if ([myObject isKindOfClass:[AnObject class]])
+    if([[segue destinationViewController] isKindOfClass:[ContactDetailsTableViewController class]]){
+        NSLog(@"it works!");
+        //get the contact from the table view (don't forget to create the outlet for contactsTableView in the ContactsTableViewController.h)
+        NSInteger selectedRow = [[[self contactsTableView] indexPathForSelectedRow] row];
+        Contact* selectedContact = [[self contactsArray] objectAtIndex:selectedRow];
+        //get the destination view controller
+        ContactDetailsTableViewController* contactDetailsViewController = [segue destinationViewController];
+        [contactDetailsViewController setContact:selectedContact];
+        
+    }
+        
+    
 }
-*/
+
 
 @end

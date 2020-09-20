@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSString* email;
 @property NSString* phone;
 
+
 - (instancetype)initWithPhoto: (UIImage*) photo
                         name: (NSString*) name
                     position: (NSString*) position

@@ -10,6 +10,15 @@
 
 @implementation Contact
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _photo = nil;
+    }
+    return self;
+}
+
 - (instancetype)initWithPhoto: (UIImage*) photo
                          name: (NSString*) name
                      position: (NSString*) position

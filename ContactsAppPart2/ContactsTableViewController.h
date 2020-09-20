@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Contact.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ContactsTableViewController : UITableViewController
 
 @property NSMutableArray* contactsArray;
+@property Contact* selectedContact;
+@property (strong, nonatomic) IBOutlet UITableView *contactsTableView;
 
 @end
 
