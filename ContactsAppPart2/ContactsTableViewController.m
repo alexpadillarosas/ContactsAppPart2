@@ -71,11 +71,11 @@
         if(cell == nil){
             cell = [[ContactCellTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         }
-        Contact* selectedContact = [[self contactsArray] objectAtIndex:indexPath.row];
+        Contact* currentContact = [[self contactsArray] objectAtIndex:indexPath.row];
     
-        [[cell nameLabel] setText:[selectedContact name]];
-        [[cell photoImageView] setImage:[selectedContact photo]];
-        [[cell positionLabel] setText:[selectedContact position]];
+        [[cell nameLabel] setText:[currentContact name]];
+        [[cell photoImageView] setImage:[currentContact photo]];
+        [[cell positionLabel] setText:[currentContact position]];
         
         return cell;
 }

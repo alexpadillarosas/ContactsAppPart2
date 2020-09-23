@@ -107,6 +107,11 @@
                                                         <constraint firstAttribute="width" constant="192" id="Gtu-Dh-QO3"/>
                                                         <constraint firstAttribute="height" constant="192" id="Pbc-js-Wz8"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <integer key="value" value="100"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Surname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxR-wX-bD6" userLabel="Name Label">
                                                     <rect key="frame" x="114" y="253" width="186" height="34"/>
